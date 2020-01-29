@@ -35,7 +35,7 @@
 \affil[1]{Oeschger Centre for Climate Change Research and Institute of Geography, University of Bern, Bern, Switzerland}
 
 \corraddress{Pascal Horton, Oeschger Centre for Climate Change Research and Institute of Geography, University of Bern, 3012 Bern, Switzerland}
-\corremail{pascal.horton@alumni.epfl.ch}
+\corremail{pascal.horton@giub.unibe.ch}
 
 %\presentadd[\authfn{2}]{Department, Institution, City, State or Province, Postal Code, Country}
 
@@ -65,22 +65,22 @@ The choice of a reanalysis dataset to be used in an AM can be driven by the cont
 
 NCEP/NCAR Reanalysis 1 \citep[NR-1 --][]{Kalnay1996, Kistler2001} and NCEP/DOE Reanalysis 2 \citep[NR-2 --][]{Kanamitsu2002} were used in many applications of AMs \citep{Timbal2003, Bontron2004, Wetterhall2005a, Gangopadhyay2005, Altava-Ortiz2006, Barrera2007, Cannon2007, Matulla2007, Bliefernicht2007, Maurer2008, BenDaoud2009, Wu2012, Marty2012, Teng2012, Horton2012, Yiou2014}. ERA-40 \citep{Uppala2005}, produced by ECMWF, has also been used substantially \citep {BenDaoud2009, Willems2011b, JakobThemessl2011a, BenDaoud2011, Turco2011a, Franke2011, Pascual2012b, Schenk2012, Ribalaygua2013a, Osca2013, Radanovics2013, Martin2014b, Chardon2014, BenDaoud2016}. Its sucessor, ERA-Interim \citep[ERA-INT --][]{Dee2011a}, has been used by \cite{Raynaud2016b}. NASA's Modern-Era Retrospective Analysis for Research and Applications \citep[MERRA -- ][]{Rienecker2011} has been used by \citet{Vanvyve2015}. The Japanese products, the Japanese 55-year Reanalysis \citep[JRA-55 --][]{Kobayashi2015, Harada2016} and its conventional-only JRA-55 Conventional \citep[JRA-55C --][]{Kobayashi2014}, were not used in AMs to the author knowledge. Newer products, such as NCEP's the Climate Forecast System Reanalysis \citep[CFSR --][]{Saha2010a} or MERRA version 2 \citep[MERRA-2 -- ][]{Gelaro2017} are not much used yet in AMs. One can often observe a lag between the release of a new reanalysis dataset and its adoption in AMs.
 
-Most applications of AMs are based on a single reanalysis dataset and the impact of this choice is overlooked. \citet{BenDaoud2009} compared NR-1 to ERA-40 and found no significant difference for the predictors considered. Later, \citet{Dayon2015} compared NR-1, MERRA, ERA-INT and 20CR and found out that the choice of the reanalysis dataset has a non-negligible impact on the performance of the AMs that can even be greater than the choice of the predictor variables. They concluded that the role of the reanalyses should not be underestimated. Such an influence has also been observed for other statistical downscaling methods \citep[e.g.][]{Koukidis2009}. \citet{Horton2018b} compared ten global reanalyses and concluded that the impact of the dataset on the results of the AM are significant. The conclusion was similar to that of \citet{Dayon2015}, in that the influence of the reanalysis can be bigger than that of the predictors selection. Some recommendations were established to guide for the choice of the reanalysis depending on the period and the predictors of interest. Globally, more recent products that assimilate more data show better skills \citep{Horton2018b}. In that respect, the recent release of ERA5 \citep{Hersbach2019} raises the question of how better it can be compared to its predecessor ERA-Interim, and what are the benefit and eventual pitfall of its higher spatial and temporal resolutions.
+Most applications of AMs are based on a single reanalysis dataset and the impact of this choice is overlooked. \citet{BenDaoud2009} compared NR-1 to ERA-40 and found no significant difference for the predictors considered. Later, \citet{Dayon2015} compared NR-1, MERRA, ERA-INT and 20CR and found out that the choice of the reanalysis dataset has a non-negligible impact on the performance of the AMs that can even be greater than the choice of the predictor variables. They concluded that the role of the reanalyses should not be underestimated. Such an influence has also been observed for other statistical downscaling methods \citep[e.g.][]{Koukidis2009}. \citet{Horton2018b} compared ten global reanalyses and concluded that the impact of the dataset on the results of the AM are significant. The conclusion was similar to that of \citet{Dayon2015}, in that the influence of the reanalysis can be bigger than that of the predictors selection. Some recommendations were established to guide for the choice of the reanalysis depending on the period and the predictors of interest. Globally, more recent products that assimilate more data show better skills \citep{Horton2018b}. In that respect, the recent release of ERA5 \citep{Hersbach2019} raises the question of how better it can be for AMs compared to its predecessor ERA-Interim, and what are the benefits and eventual pitfalls of its higher spatial and temporal resolutions.
+
+ERA5 was compared to nine other global reanalyses for seven AMs at 301 stations in Switzerland. The data and methods are described in section \ref{sec:data_methods}. The impact of the skill is presented in section \ref{sec:results_skill}, the spatial resolution is assessed in section \ref{sec:results_hires}, and the similarity to other reanalyses is presented in section \ref{sec:results_shared_dates}. The conclusion (section \ref{sec:conclusions}) summarizes the key findings.
 
 
 \section{Data and methods}
+\label{sec:data_methods}
 
 \subsection{Reanalyses}
+\label{sec:reanalyses}
 
 The present work aims at comparing ERA5 \citep{Hersbach2019} to other global reanalyses, which characteristics are provided in Table \ref{table:datasets}. The three first reanalyses are surface-input \citep{Fujiwara2017} products that assimilate surface data only, but cover a long period, typically the 20th century. NOAA produced the Twentieth Century Reanalysis \citep[version 2c, 20CR-2c --][]{Compo2011} which only assimilates surface pressure data and uses observed monthly sea-surface temperature and sea-ice distributions as boundary conditions. The European Centre for Medium-Range Weather Forecasts (ECMWF) developed two products using surface input only: ERA-20C \citep{Poli2016} that assimilates marine wind observations and is forced by sea surface temperature, sea ice cover, atmospheric composition changes, and solar forcing, and CERA-20C \citep{Laloyaux2018a}, which has an additional coupling to the ocean and was produced by a more recent version of the IFS model.
 
 The other reanalyses are full-input products as they assimilate all available data, including satellite data \citep{Fujiwara2017}. The NCEP/NCAR Reanalysis I \citep[NR-1 --][]{Kalnay1996, Kistler2001} was the first global reanalysis, followed by the NCEP/DOE Reanalysis 2 \citep[NR-2 --][]{Kanamitsu2002} that fixed some identified problems. The Climate Forecast System Reanalysis \citep[CFSR --][]{Saha2010a} is the most recent reanalysis by NCEP. The Japanese 55-year Reanalysis \citep[JRA-55 --][]{Kobayashi2015, Harada2016} is produced by the Japan Meteorological Agency (JMA). Its version using conventional data only, JRA-55 Conventional \citep[JRA-55C --][]{Kobayashi2014}, was not considered in this work as it provides similar results as JRA-55 \citep{Horton2018b}. NASA's Global Modeling and Assimilation Office (GMAO) released the Modern-Era Retrospective Analysis for Research and Applications, version 2 \citep[MERRA-2 -- ][]{Gelaro2017}, which is an improvement of the first MERRA reanalysis \citep{Rienecker2011}. Finally, the predecessor of ERA5, ERA-Interim \citep[ERA-INT --][]{Dee2011a}, was also considered.
 
 ERA5 \citep{Hersbach2019} is meant to replace ERA-Interim. It profits from multiple improvements to the Integrating Forecasting System (IFS), in terms of model physics, core dynamics, and data assimilation \citep{Hersbach2019}. It provides more outputs, with higher temporal (hourly) and spatial (31~km) resolutions. The use of a 10-member ensemble of data assimilations at a lower spatial and temporal resolution allows providing an estimate of the uncertainty. ERA5 assimilates significantly more data than ERA-Interim, such as ground-based radar and new satellite sensors, and uses improved observation operators, which allows to better compare model outputs and observations. Additionally, it indirectly profits from improvements of historical observations, both for conventional and satellite data \citep{Hersbach2019}. ERA5 is also more appropriate for climate analyses as it relies on suitable radiative forcing and boundary conditions (e.g. changes in greenhouse gases, aerosols, SST, and sea ice).
-
-
-%TODO: describe ERA5
-
 
 
 \begin{table}[bt]
@@ -126,6 +126,7 @@ ERA5 \citep{Hersbach2019} is meant to replace ERA-Interim. It profits from multi
 %More consistent sea surface temperature and sea ice
 
 \subsection{Precipitation dataset}
+\label{sec:precipitation}
 
 The local variable to be predicted is here daily precipitation totals (06:00~h~UTC to 06:00~h~UTC the following day) at 301 stations of the MeteoSwiss network in Switzerland (Fig. \ref{fig:stations}), with a good coverage of the 1981--2010 period. The 30-year precipitation dataset was divided into a calibration period (CP) and an independent validation period (VP), which was evenly distributed over the entire series (1 year out of every 5; total of 6 years). The archive period (AP), where the analogue dates are being retrieved, is the same as the CP -- also with the VP being excluded -- with an additional exclusion of $\pm30$ days around the target date. Results are always presented for the VP.
 
@@ -137,59 +138,76 @@ The local variable to be predicted is here daily precipitation totals (06:00~h~U
 
 
 \subsection{Analog methods}
+\label{sec:ams}
 
-\begin{equation}
-\label{eq:S1}
-S1=100 \frac{\sum_{i} \vert \Delta\hat{z}_{i} - \Delta z_{i} \vert}{\sum_{i} \max\left\lbrace \vert \Delta\hat{z}_{i} \vert; \vert \Delta z_{i} \vert \right\rbrace }
-% use \displaystyle to max sum sign larger
-\end{equation}
-where $\Delta \hat{z}_{i}$ is the geopotential height gradient between the \textit{i}-th pair of points for the target day, and $\Delta z_{i}$ is the corresponding observed geopotential height gradient for the candidate situation. The smaller the values S1 are, the more similar the pressure fields.
-
+Most variants of the AM from \cite{Horton2018b} were considered (Table \ref{table:methods}). These AMs have different degrees of complexity, but they all start with a preselection in order to cope with seasonality. A commonly used preselection is based on the dates (PC: preselection on calendar basis in Table \ref{table:methods}) as candidate situations are extracted from the archive for a period of 120~days centered around the target date. To allow for a more dynamic approach, \citet{BenDaoud2016} based this preselection on the similarity of air temperature (T) at 925~hPa and 600~hPa at the nearest grid point. An undesired mixing of spring and autumn situations is discussed in \citet{Caillouet2016}. 
 
 \begin{table*}[t]
 	\caption{Analogue methods considered in the study, listed by increasing complexity. The analogy criterion is S1 for SLP and Z and RMSE for the other variables.}
 	\small
 	\begin{threeparttable}
-	\begin{tabular}{llllll}
-		\hline
-		\headrow
-		\thead{Method} & \thead{P0} & \thead{L1} & \thead{L2} & \thead{L3} & \thead{Reference} \\ 
-		\hline 
-		\multirow{2}{*}{\textbf{2Z}} & \multirow{2}{*}{PC} & Z1000@12h &&& \multirow{2}{*}{\citealp{Bontron2004}} \\
-		&& Z500@24h &&& \\
-		\hline 
-		\multirow{4}{*}{\textbf{4Z}} & \multirow{4}{*}{PC} & Z1000@06h &&& \multirow{4}{*}{\citealp{Horton2018a}} \\
-		&& Z1000@30h &&& \\
-		&& Z700@24h &&& \\
-		&& Z500@12h &&& \\
-		\hline 
-		\multirow{2}{*}{\textbf{2Z-2MI}} & \multirow{2}{*}{PC} & Z1000@12h & \multirow{2}{*}{MI850@12+24h} && \multirow{2}{*}{\citealp{Bontron2004}} \\
-		&& Z500@24h &&& \\
-		\hline 
-		\multirow{4}{*}{\textbf{4Z-2MI}} & \multirow{4}{*}{PC} & Z1000@30h &&& \multirow{4}{*}{\citealp{Horton2018a}}\\
-		&& Z850@12h & MI700@24h && \\
-		&& Z700@24h & MI600@12h && \\
-		&& Z400@12h &&& \\
-		\hline 
-		\multirow{2}{*}{\textbf{PT-2Z-4MI}} & T925@36h & Z1000@12h & MI925@12+24h && \multirow{2}{*}{\citealp{BenDaoud2016}} \\
-		& T600@12h & Z500@24h & MI700@12+24h && \\
-		\hline 
-		\multirow{2}{*}{\textbf{PT-2Z-4W-4MI}} & T925@36h & Z1000@12h & \multirow{2}{*}{W850@06-24h} & MI925@12+24h & \multirow{2}{*}{\citealp{BenDaoud2016}} \\
-		& T600@12h & Z500@24h && MI700@12+24h & \\
-		\hline 
-	\end{tabular} 
-
-	\begin{tablenotes}
-	\item P0, preselection (PC: $\pm 60$ days around the target date); L1, L2 and L3, subsequent levels of analogy.
-	\item Z, geopotential height; T, air temperature; W, vertical velocity; MI, moisture index (product of the relative humidity at the given pressure level and the total water column).
-	\end{tablenotes}
+		\begin{tabular}{llllll}
+			\hline
+			\headrow
+			\thead{Method} & \thead{P0} & \thead{L1} & \thead{L2} & \thead{L3} & \thead{Reference} \\ 
+			\hline 
+			\multirow{2}{*}{\textbf{2Z}} & \multirow{2}{*}{PC} & Z1000@12h &&& \multirow{2}{*}{\citealp{Bontron2004}} \\
+			&& Z500@24h &&& \\
+			\hline 
+			\multirow{4}{*}{\textbf{4Z}} & \multirow{4}{*}{PC} & Z1000@06h &&& \multirow{4}{*}{\citealp{Horton2018a}} \\
+			&& Z1000@30h &&& \\
+			&& Z700@24h &&& \\
+			&& Z500@12h &&& \\
+			\hline 
+			\multirow{2}{*}{\textbf{2Z-2MI}} & \multirow{2}{*}{PC} & Z1000@12h & \multirow{2}{*}{MI850@12+24h} && \multirow{2}{*}{\citealp{Bontron2004}} \\
+			&& Z500@24h &&& \\
+			\hline 
+			\multirow{4}{*}{\textbf{4Z-2MI}} & \multirow{4}{*}{PC} & Z1000@30h &&& \multirow{4}{*}{\citealp{Horton2018a}}\\
+			&& Z850@12h & MI700@24h && \\
+			&& Z700@24h & MI600@12h && \\
+			&& Z400@12h &&& \\
+			\hline 
+			\multirow{2}{*}{\textbf{PT-2Z-4MI}} & T925@36h & Z1000@12h & MI925@12+24h && \multirow{2}{*}{\citealp{BenDaoud2016}} \\
+			& T600@12h & Z500@24h & MI700@12+24h && \\
+			\hline 
+			\multirow{2}{*}{\textbf{PT-2Z-4W-4MI}} & T925@36h & Z1000@12h & \multirow{2}{*}{W850@06-24h} & MI925@12+24h & \multirow{2}{*}{\citealp{BenDaoud2016}} \\
+			& T600@12h & Z500@24h && MI700@12+24h & \\
+			\hline 
+		\end{tabular} 
+		
+		\begin{tablenotes}
+			\item P0, preselection (PC: $\pm 60$ days around the target date); L1, L2 and L3, subsequent levels of analogy.
+			\item Z, geopotential height; T, air temperature; W, vertical velocity; MI, moisture index (product of the relative humidity at the given pressure level and the total water column).
+		\end{tablenotes}
 	\end{threeparttable}
 	\label{table:methods}
 \end{table*}
 
+All considered AMs have a first level of analogy on the atmospheric circulation, using the geopotential height (Z) at different pressure levels and time as predictor. This analogy is quantified by the S1 criterion \citep[Eq.\ \ref{eq:S1}, ][]{Teweles1954, Brown2012}, which is a comparison of gradients over a selected (calibrated) domain. The objective is to compare the atmospheric flow and not the absolute values of the respective fields. The values of the criterion processed for different levels/hours are here averaged into a single value for a given candidate date. More advanced approaches introduce a weighting between these diverse components \citep{Horton2017a}.
+
+\begin{equation}
+	\label{eq:S1}
+	S1=100 \frac{\sum_{i} \vert \Delta\hat{z}_{i} - \Delta z_{i} \vert}{\sum_{i} \max\left\lbrace \vert \Delta\hat{z}_{i} \vert; \vert \Delta z_{i} \vert \right\rbrace }
+	% use \displaystyle to max sum sign larger
+\end{equation}
+where $\Delta \hat{z}_{i}$ is the geopotential height gradient between the \textit{i}-th pair of points for the target day, and $\Delta z_{i}$ is the corresponding observed geopotential height gradient for the candidate situation. The smaller the values S1 are, the more similar the pressure fields.
+
+The most simple method, 2Z, is based only on the analogy of the atmospheric cirulation, using the geopotential height at 1000~hPa and 500~hPa, \citep{Bontron2004}. The most similar $N_{1}$ dates, with the lowest values of S1, are selected as analogues to the target date. The daily precipitation that was measured at these $N_{1}$ dates then provides the empirical conditional distribution, considered as the probabilistic prediction for the target date.
+
+The second method, 4Z, is also based on geopotential height only, but using four combinations of pressure levels and temporal windows \citep{Horton2018a}. This method is here considered as a simplified version of a more complex method elaborated by genetic algorithms. It was found that using four geopotentiel height is more informative than using only two.
+
+Then, the next three methods (2Z-2MI, 4Z-2MI, PT-2Z-4MI, Table \ref{table:methods}) add a second level of analogy to subsample from the first level, based on moisture variables. The predictor considered here is a moisture index (MI), which is the product of the total precipitable water (TPW) and the relative humidity (RH) and was introduced by \citet{Bontron2004}. This predictor is assessed using the root mean square error (RMSE) criterion. The 2Z-2MI method \citep{Bontron2004} considers this index at 850~hPa for two different hours (+12 h and +24 h). The 4Z-2MI method \citep{Horton2018a}, derived from optimizations with genetic algorithms, consider the 600~hPa and 700~hPa levels, but with a change in the selected levels of the geopotential height compared to 4Z. The 4Z-2MI method \citep{BenDaoud2016} considers the moisture index at 700~hPa and 925~hPa, both at +12 h and +24 h.
+
+Finally, the most complex method, PT-2Z-4W-4MI, also named "SANDHY" for Stepwise Analogue Downscaling method for Hydrology \citep{BenDaoud2016, Caillouet2016}, adds an intermediate level of analogy, before the moisture predictors, based on the vertical velocity (W) at 850~hPa. It was primarily developed for large and relatively flat/lowland catchments in France (Sa\^{o}ne, Seine).
+
+\subsection{Calibration of the methods}
+\label{sec:calibration}
 
 \section{Results}
+\label{sec:results}
+
 \subsection{Impact on the skill}
+\label{sec:results_skill}
 
 \begin{figure}[bt]
     \centering
@@ -209,6 +227,7 @@ where $\Delta \hat{z}_{i}$ is the geopotential height gradient between the \text
 %TODO: biases
 
 \subsection{High resolution and its pitfalls}
+\label{sec:results_hires}
 
 
 \begin{figure}[bt]
@@ -220,8 +239,10 @@ where $\Delta \hat{z}_{i}$ is the geopotential height gradient between the \text
 
 
 \subsection{Shared analog dates}
+\label{sec:results_shared_dates}
 
 \section{Conclusions}
+\label{sec:conclusions}
 
 
 
