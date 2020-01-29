@@ -200,8 +200,22 @@ Then, the next three methods (2Z-2MI, 4Z-2MI, PT-2Z-4MI, Table \ref{table:method
 
 Finally, the most complex method, PT-2Z-4W-4MI, also named "SANDHY" for Stepwise Analogue Downscaling method for Hydrology \citep{BenDaoud2016, Caillouet2016}, adds an intermediate level of analogy, before the moisture predictors, based on the vertical velocity (W) at 850~hPa. It was primarily developed for large and relatively flat/lowland catchments in France (Sa\^{o}ne, Seine).
 
+
 \subsection{Calibration of the methods}
 \label{sec:calibration}
+
+The CRPS \citep[Continuous Ranked Probability Score,][]{Brown1974, Matheson1976, Hersbach2000} is often used as objective function, and allows evaluating the predicted cumulative distribution provided by the analogs compared to the single observed value at the target date. Its skill score expression, the CRPSS (Continuous Ranked Probability Skill Score), was used here, using the climatological distribution of precipitation as the reference. It allows a better comparison between stations as it partly takes into account the differences in climatology. The CRPSS is expressed as follows \citep{Bradley2011}:
+
+\begin{equation}
+	\label{eq:CRPSS}
+	CRPSS = 1-\frac{\overline{CRPS}}{\overline{CRPS}_{clim}}
+\end{equation}
+where $CRPS_{clim}$ is the CRPS value for the climatological distribution. A better prediction is characterized by an increase in CRPSS.
+
+The methods were here calibrated using the semi-automatic sequential procedure developed by \citet{Bontron2004} and also used in \citet{Radanovics2013} and \citet{BenDaoud2016}. A detailed description can also be found in \citet{Horton2019}. It allows the calibration of the spatial windows on which the predictors are compared (specific to each level of analogy) and of the number of analog dates to select at the different levels of analogy. The AtmoSwing software \citep{Horton2019} was used to perform this calibration independently for every station, method, and reanalysis. The calculations were performed on a HPC cluster at the University of Bern.
+
+After the initial calibration of all AMs for ERA5, some issues were identified due to the presence of local minimas for the spatial windows in the high resolution grid. The procedure was then restarted using an improvement of the semi-automatic procedure, named classic+ \citep{Horton2019}, which allows additional moves in the calibration of the spatial windows and thus allows escaping local minimas. This issue is presented and discussed in section \ref{sec:results_hires}.
+
 
 \section{Results}
 \label{sec:results}
