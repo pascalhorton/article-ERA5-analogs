@@ -67,7 +67,7 @@ NCEP/NCAR Reanalysis 1 \citep[NR-1 --][]{Kalnay1996, Kistler2001} and NCEP/DOE R
 
 Most applications of AMs are based on a single reanalysis dataset and the impact of this choice is overlooked. \citet{BenDaoud2009} compared NR-1 to ERA-40 and found no significant difference for the predictors considered. Later, \citet{Dayon2015} compared NR-1, MERRA, ERA-INT and 20CR and found out that the choice of the reanalysis dataset has a non-negligible impact on the performance of the AMs that can even be greater than the choice of the predictor variables. They concluded that the role of the reanalyses should not be underestimated. Such an influence has also been observed for other statistical downscaling methods \citep[e.g.][]{Koukidis2009}. \citet{Horton2018b} compared ten global reanalyses and concluded that the impact of the dataset on the results of the AM are significant. The conclusion was similar to that of \citet{Dayon2015}, in that the influence of the reanalysis can be bigger than that of the predictors selection. Some recommendations were established to guide for the choice of the reanalysis depending on the period and the predictors of interest. Globally, more recent products that assimilate more data show better skills \citep{Horton2018b}. In that respect, the recent release of ERA5 \citep{Hersbach2019} raises the question of how better it can be for AMs compared to its predecessor ERA-Interim, and what are the benefits and eventual pitfalls of its higher spatial and temporal resolutions.
 
-ERA5 was compared to nine other global reanalyses for seven AMs at 301 stations in Switzerland. The data and methods are described in section \ref{sec:data_methods}. The impact of the skill is presented in section \ref{sec:results_skill}, the spatial resolution is assessed in section \ref{sec:results_hires}, and the similarity to other reanalyses is presented in section \ref{sec:results_shared_dates}. The conclusion (section \ref{sec:conclusions}) summarizes the key findings.
+ERA5 was compared to nine other global reanalyses for seven AMs at 301 stations in Switzerland. The data and methods are described in section \ref{sec:data_methods}. The impact of the skill is presented in section \ref{sec:results_skill}, the spatial resolution is assessed in section \ref{sec:results_hires}, and the similarity to other reanalyses is presented in section \ref{sec:results_shared_dates}. The conclusions (section \ref{sec:conclusion}) summarize the key findings.
 
 
 \section{Data and methods}
@@ -201,7 +201,7 @@ Then, the next three methods (2Z-2MI, 4Z-2MI, PT-2Z-4MI, Table \ref{table:method
 Finally, the most complex method, PT-2Z-4W-4MI, also named "SANDHY" for Stepwise Analogue Downscaling method for Hydrology \citep{BenDaoud2016, Caillouet2016}, adds an intermediate level of analogy, before the moisture predictors, based on the vertical velocity (W) at 850~hPa. It was primarily developed for large and relatively flat/lowland catchments in France (Sa\^{o}ne, Seine).
 
 
-\subsection{Calibration of the methods}
+\subsection{Calibration of the methods} %\subsubsection?
 \label{sec:calibration}
 
 The CRPS \citep[Continuous Ranked Probability Score,][]{Brown1974, Matheson1976, Hersbach2000} is often used as objective function, and allows evaluating the predicted cumulative distribution provided by the analogs compared to the single observed value at the target date. Its skill score expression, the CRPSS (Continuous Ranked Probability Skill Score), was used here, using the climatological distribution of precipitation as the reference. It allows a better comparison between stations as it partly takes into account the differences in climatology. The CRPSS is expressed as follows \citep{Bradley2011}:
@@ -274,21 +274,37 @@ The use of predictors from different datasets, and of distinct spatial windows, 
 	\label{fig:shared-dates}
 \end{figure}
 
-As it could be expected, ERA5 shared some similarities in the selection of analog dates with ERA-INT, but not in an order of magnitude that is really different from the other modern full-input reanalyses. Indeed, the percentage of shared analog dates is of the same order of magnitude as with CFSR and JRA-55, which are the two reanalyses produced by models with higher spatial resolution (Table \ref{table:datasets}), but fewer vertical levels. It is worth noting that JRA-55, which presents here strong similarities with ERA5 in terms of selected analog dates for Switzerland, has an output resolution that is five times lower (1.25\degree). 
+As it could be expected, ERA5 shared some similarities in the selection of analog dates with ERA-INT, but not in an order of magnitude that is really different from the other modern full-input reanalyses. Indeed, the percentage of shared analog dates is of the same order of magnitude as with CFSR and JRA-55, which are the two reanalyses produced by models with higher spatial resolution (Table \ref{table:datasets}), but fewer vertical levels. It is worth noting that JRA-55, which presents here strong similarities with ERA5 in terms of selected analog dates for Switzerland, has an output resolution that is five times lower (1.25\degree). However, JRA-55 shares more analog dates with ERA-INT than with ERA5. 
 
 
 \section{Conclusions}
-\label{sec:conclusions}
+\label{sec:conclusion}
+
+The choice of a reanalysis has a significant impact on the performance of AMs, as already shown in \citet{Horton2018b}. The influence of the dataset on the skill of the methods can even be larger than this related to the selection of the predictor variables. This has also been observed by other authors \cite{Dayon2015}. One of the conclusions of \citet{Horton2018b} is that the latest version of the full-input reanalyses should be used as they contribute to a better skill in the perfect prognosis context and for Switzerland, which is also likely valid for Europe. The subsequent release of ERA5 then raised the question of the potential benefit it could bring over ERA-INT, and to what extent the high spatial resolution could be informative for statistical downscaling.
+
+This work focused on comparing ERA5 to the other main global reanalyses, and showed that it should be the dataset of choice for all tested AMs. Indeed, it surpassed the other reanalyses most of the time and was selected as the best dataset by about 50\% of the stations, and in on of the two first ranks by 75\% of the stations. Although ERA5 globally performed better than ERA-INT for the assessed AMs, ERA-INT was not systematically superseded by ERA5 for all stations. It it thus important to undertake such comparison with a large enough sample of stations in order to be capture well the overall picture. Even though ERA5 might not be the best reanalysis for all stations, it would not be advisable to patchwork the selection of reanalyses among stations. It would be recommendable however to use not a single, but a selection of reanalyses for certain applications.
+
+ERA5 is distributed at very high spatial (0.25\degree) and temporal (1~h) resolutions. Although AMs are quick techniques, their calibration over several decades can be time consuming. This time increases all the more with a higher spatial resolution of the predictor grids. The high resolution even turned into a trap for the calibration technique here that ended up stuck in local minimas, resulting in poor skills. When using high resolution predictor grids, one should take care that the calibration technique used is able to satisfactorily optimize the spatial windows. The classic+ calibration \citep{Horton2019} could here successfully calibrate the spatial windows thanks to additional moves that allow it to go out of local minimas. \citet{Horton2018b} showed that below 1\degree, the gains are limited for AMs. ERA5 was tested at two resolutions here, its original one and the same resolution as ERA-INT (0.75\degree). The reduction in resolution did not impact the performance of AMs for daily precipitation, here mainly driven by synoptic-scale processes. This was shown not to be valid for predictands driven by mesoscale drivers. It also implies that the output resolution does not explain the gain in skill compared to ERA-INT, which are likely due to improvements in the forecast model, the assimilation scheme and the assimilated data.
+
+To conclude, the use of ERA5 is recommended for the prediction of daily precipitation with AMs in Europe, ideally along with other reanalyses to provide an multi-model approach. However, for predictands that are primarily driven by synoptic-scale processes, using ERA5 at its full resolution is not justified and might even be dangerous if the calibration method does not handle it well.
 
 
 
+\section*{acknowledgements}
+Precipitation time series were provided by MeteoSwiss. The NCEP/NCAR, NCEP/DOE, and 20CR-2c were provided by the NOAA/OAR/ESRL PSD, Boulder, Colorado, USA, at http://www.esrl.noaa.gov/psd/. Support for the Twentieth Century Reanalysis Project dataset is provided by the U.S. Department of Energy, Office of Science Innovative and Novel Computational Impact on Theory and Experiment (DOE INCITE) program, and Office of Biological and Environmental Research (BER), and by the National Oceanic and Atmospheric Administration Climate Program Office. The CFSR, and JRA-55 were obtained from the CISL Research Data Archive (http://rda.ucar.edu/) at NCAR in Boulder, Colorado, and the NCAR is supported by grants from the National Science Foundation. The Climate Forecast System Reanalysis (CFSR) project is carried out by the Environmental Modeling Center (EMC), National Centers for Environmental Prediction (NCEP). The Japanese 55-year Reanalysis (JRA-55) project is carried out by the Japan Meteorological Agency (JMA). The MERRA-2 was obtained from the Goddard Earth Sciences Data and Information Services Center, Greenbelt, Maryland, from their website at http://disc.sci.gsfc.nasa.gov/mdisc. ERA-interim, ERA-20C, and CERA-20C were obtained from the ECMWF Data Server at http://apps.ecmwf.int/datasets/. ERA5 was obtained from the C3S climate data store (CDS) at https://cds.climate.copernicus.eu. Calculations were performed on UBELIX (http://www.id.unibe.ch/hpc), the HPC cluster at the University of Bern.
 
 
+\section*{data availability}
+All calculations were performed with the open source AtmoSwing software v2.1.1 \citep{Horton2019c}. The resulting files were processed using AtmoSwing R-toolbox v1.2.0 \citep{Horton2018d}.
+
+The resulting analogue dates for every combination of station, reanalysis, and analogue method were published. These archives also contain different files: the parameter files used in AtmoSwing for the calibration, the resulting calibrated parameters, and files listing all assessed parameter sets. These files are available for ERA5 (...) and the other reanalyses \citep[see references in][]{Horton2018b}.
+
+%TODO: publish data
 
 
-%\subsubsection{Third Level Heading}
-%\paragraph{Fourth Level Heading}
-%\subparagraph{Fifth level heading}
+\section*{conflict of interest}
+The author has declared no conflict of interest.
+
 
 % Here are examples of quotes and epigraphs.
 %\begin{quote}
@@ -300,14 +316,6 @@ As it could be expected, ERA5 shared some similarities in the selection of analo
 %\end{epigraph}
 
 
-
-
-
-\section*{acknowledgements}
-...
-
-\section*{conflict of interest}
-...
 
 %\printendnotes
 
