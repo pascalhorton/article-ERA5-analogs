@@ -49,10 +49,15 @@
 \maketitle
 
 \begin{abstract}
-This is a generic template designed for use by multiple journals, which includes several options for customization. Please consult the author guidelines for the journal to which you are submitting in order to confirm that your manuscript will comply with the journal's requirements. Please replace this text with your abstract.
+Statistical downscaling techniques that are of the perfect prognosis type rely on statistical relationships established between observational data for both predictands and predictors. Predictors are often retrieved from reanalyses, which are considered as pseudo-observations. The impact of the choice of a reanalysis dataset on the skill of the downscaling method is often overlooked as global reanalyses are frequently assumed to be equivalent for the last decades and for data-rich regions such as Europe. However, it was recently shown that the selection of a reanalysis dataset has an impact on the skill of the method that can be even higher than the selection of the predictor variables. The obvious general tendency is that reanalyses that are processed by more recent atmospheric models and that assimilate more data perform better. 
+
+Following the recent release of ERA5, this work aims at assessing the extent of the potential gain compared to other global reanalyses, including its predecessor, ERA-interim. The assessment was carried out using six variants of analog methods, which are statistical downscaling techniques, to predict the daily precipitation at 301 stations in Switzerland. Among the ten reanalyses that were compared, ERA5 ended up in the best performing datasets, and was the best choice for 50\% of the stations in average across the different analog methods. 
+
+However, ERA5 is distributed with a high spatial resolution (0.25\degree), which turned out to be not relevant for analog methods, and which can even be a trap for simple calibration techniques. Indeed, the domains over which the predictor fields are compared need to be optimized, and high-resolution grids come along with numerous sub-optimal local minima. Besides the risk of poorly-calibrated domains, the high resolution also involves much higher computational time for no gain in skill, as long as the predictors are at synoptic scale.
+
 
 % Please include a maximum of seven keywords
-\keywords{keyword 1, \emph{keyword 2}, keyword 3, keyword 4, keyword 5, keyword 6, keyword 7}
+\keywords{reanalyses, ERA5, statistical downscaling, analog method, precipitation, Switzerland}
 \end{abstract}
 
 \section{Introduction}
