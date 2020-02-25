@@ -26,9 +26,7 @@
 % Guidelines: https://rmets.onlinelibrary.wiley.com/hub/journal/10970088/about/author-guidelines
 
 % Update article type if known
-\papertype{Original Article}
-% Include section in journal if known, otherwise delete
-%\paperfield{Journal Section}
+\papertype{Research Article}
 
 \title{Should analog methods use ERA5 for statistical precipitation downscaling? }
 
@@ -66,6 +64,7 @@ However, ERA5 is delivered with a high spatial resolution (0.25\degree), which t
 
 % Please include a maximum of seven keywords
 \keywords{reanalyses, ERA5, statistical downscaling, analog method, precipitation, Switzerland}
+
 \end{abstract}
 
 \linenumbers
@@ -298,42 +297,42 @@ The author has declared no conflict of interest.
 
 
 \begin{figure}
-	\includegraphics[width=70mm]{figures/map-stations.jpg}\\
+	\includegraphics[width=70mm]{fig-horton-1.jpg}\\
 	\caption{Map of the 301 precipitation stations with good data coverage of the period 1981--2010. Background map: \textcopyright\ SwissTopo.}
 	\label{fig:stations}
 \end{figure}
 
 \begin{figure}[bt]
 	\centering
-	\includegraphics[width=\textwidth]{figures/boxplot-per-method.pdf}
+	\includegraphics[width=\textwidth]{fig-horton-2.pdf}
 	\caption{CRPSS for all stations and all considered AMs and reanalysis datasets on the VP. A higher CRPSS means better performance. The parameters of the AMs were calibrated for every station, every dataset, and every method. The boxes show the 25th, 50th, and 75th percentiles. The whiskers extend to the most extreme data point, which is no more than 1.5 times the interquartile range.}
 	\label{fig:comparison_values}
 \end{figure}
 
 \begin{figure}[bt]
 	\centering
-	\includegraphics[width=\textwidth]{figures/boxplot-per-method-diff.pdf}
+	\includegraphics[width=\textwidth]{fig-horton-3.pdf}
 	\caption{Impact of the reanalysis dataset on performance, isolated by processing the improvement in CRPSS for one dataset compared to the mean performance on all datasets, per station and method. Note that the methods cannot be compared here, only the datasets. Same conventions as Fig. 2.}
 	\label{fig:comparison_relative}
 \end{figure}
 
 \begin{figure}[bt]
 	\centering
-	\includegraphics[width=100mm]{figures/boxplot-resol-diff.pdf}
+	\includegraphics[width=100mm]{fig-horton-4.pdf}
 	\caption{Comparison of ERA-INT and ERA5 at 0.25\degree\ and 0.75\degree\ as well as a failed calibration of AMs with ERA5 (gray; see explanation in text). The impact of the reanalysis on performance has been isolated by processing the improvement in CRPSS for one dataset compared to the mean performance on all datasets (excluding the failed calibration), per station and per method. Same conventions as Fig. 2.}
 	\label{fig:resolution}
 \end{figure}
 
 \begin{figure}[bt]
 	\centering
-	\includegraphics[width=120mm]{figures/similar-dates.pdf}
+	\includegraphics[width=120mm]{fig-horton-5.pdf}
 	\caption{Percentage of identical analog dates, for different AMs, selected when using the reanalyses in columns that were also found when using the reanalyses in rows. The values were averaged for all stations on the VP.}
 	\label{fig:shared-dates}
 \end{figure}
 
 
 
-\graphicalabstract{figures/boxplot-graphical-abstract.pdf}{It was recently shown that reanalyses have an impact on statistical downscaling methods that can be even higher than the choice of the predictor variables. ERA5 proved here to be relevant when compared to other global reanalyses for the prediction of daily precipitation at 301 stations in Switzerland using six variants of analog methods. However, its high spatial resolution did not contribute to a gain in skill and was even found to be counterproductive for simple calibration techniques.}
+\graphicalabstract{fig-horton-graph-abstract.pdf}{It was recently shown that reanalyses have an impact on statistical downscaling methods that can be even higher than the choice of the predictor variables. ERA5 proved here to be relevant when compared to other global reanalyses for the prediction of daily precipitation at 301 stations in Switzerland using six variants of analog methods. However, its high spatial resolution did not contribute to a gain in skill and was even found to be counterproductive for simple calibration techniques.}
 
 
 
