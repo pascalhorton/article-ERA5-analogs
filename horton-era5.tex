@@ -28,7 +28,7 @@
 % Update article type if known
 \papertype{Research Article}
 
-\title{Should analog methods use ERA5 for statistical precipitation downscaling? }
+\title{Analog methods and ERA5: benefits and pitfalls of high spatial resolution}
 
 % List abbreviations here, if any. Please note that it is preferred that abbreviations be defined at the first instance they appear in the text, rather than creating an abbreviations list.
 \abbrevs{AMs, analog methods; NWP, Numerical weather prediction; CP, calibration period; VP, validation period; AP, archive period}
@@ -90,11 +90,11 @@ ERA5 was compared to nine other global reanalyses for seven AMs at 301 stations 
 \subsection{Reanalyses}
 \label{sec:reanalyses}
 
-The present work aims at comparing ERA5 \citep{Hersbach2019} to other global reanalyses, which characteristics are provided in Table \ref{table:datasets}. The three first reanalyses are surface-input \citep{Fujiwara2017} products that assimilate surface data only but cover an extended period, typically the 20th century. NOAA produced the Twentieth Century Reanalysis \citep[version 2c, 20CR-2c --][]{Compo2011}, which only assimilates surface pressure data and uses observed monthly sea-surface temperature and sea-ice distributions as boundary conditions. The European Centre for Medium-Range Weather Forecasts (ECMWF) developed two products using surface-input only. The first is ERA-20C \citep{Poli2016}, which assimilates marine wind observations and is forced by sea surface temperature, sea ice cover, atmospheric composition changes, and solar forcing. The second is CERA-20C \citep{Laloyaux2018a}, which has an additional coupling to the ocean and was produced by a more recent version of the IFS model.
+The present work aims at comparing ERA5 \citep{Hersbach2019} to other global reanalyses, which characteristics are provided in Table \ref{table:datasets}. The three first reanalyses are surface-input \citep{Fujiwara2017} products that assimilate surface data only but cover an extended period, typically the 20th century. NOAA produced the Twentieth Century Reanalysis \citep[version 2c, 20CR-2c --][]{Compo2011}, which only assimilates surface pressure data and uses observed monthly sea-surface temperature and sea-ice distributions as boundary conditions. The European Centre for Medium-Range Weather Forecasts (ECMWF) developed two products using surface-input only. The first is ERA-20C \citep{Poli2016}, which assimilates marine wind observations and is forced by sea surface temperature, sea ice cover, atmospheric composition changes, and solar forcing. The second is CERA-20C \citep{Laloyaux2018a}, which has an additional coupling to the ocean and was produced by a more recent version of the Integrating Forecasting System (IFS) model.
 
 The other reanalyses are full-input products that assimilate all available data, including satellite data \citep{Fujiwara2017}. NCEP/NCAR Reanalysis I \citep[NR-1 --][]{Kalnay1996, Kistler2001} was the first global reanalysis, followed by NCEP/DOE Reanalysis 2 \citep[NR-2 --][]{Kanamitsu2002} that fixed some identified problems. The Climate Forecast System Reanalysis \citep[CFSR --][]{Saha2010a} is the most recent reanalysis by NCEP. The Japanese 55-year Reanalysis \citep[JRA-55 --][]{Kobayashi2015, Harada2016} is produced by the Japan Meteorological Agency (JMA). Its version using conventional data only, JRA-55 Conventional \citep[JRA-55C --][]{Kobayashi2014}, was not considered in this work as it provides similar results as JRA-55 \citep{Horton2018b}. NASA's Global Modeling and Assimilation Office (GMAO) released the Modern-Era Retrospective Analysis for Research and Applications, version 2 \citep[MERRA-2 -- ][]{Gelaro2017}, which is an improvement of the first MERRA reanalysis \citep{Rienecker2011}. Finally, the predecessor of ERA5, ERA-Interim \citep[ERA-INT --][]{Dee2011a}, was also considered.
 
-ERA5 \citep{Hersbach2019} is meant to replace ERA-Interim. It benefits from multiple improvements to the Integrating Forecasting System (IFS), in terms of model physics, core dynamics, and data assimilation \citep{Hersbach2019}. It provides more outputs, with higher temporal (hourly) and spatial (0.28\degree; 31~km) resolutions. The use of a 10-members ensemble of data assimilations at a lower spatial and temporal resolution allows an estimation of the uncertainty. ERA5 assimilates significantly more data than ERA-Interim, such as ground-based radar and new satellite sensors, and uses improved observation operators, which allows better comparing model outputs to observations. Additionally, it indirectly benefits from improvements of historical observations, both for conventional and satellite data \citep{Hersbach2019}. ERA5 provides, among others, more consistent sea surface temperature and sea ice, an improved representation of tropical cyclones, a better balance of evaporation and precipitation, and improved soil moisture. ERA5 is also more suitable for climate analyses as it relies on appropriate radiative forcing and boundary conditions (e.g., changes in greenhouse gases, aerosols, SST, and sea ice).
+ERA5 \citep{Hersbach2019} is meant to replace ERA-Interim. It benefits from multiple improvements to IFS, in terms of model physics, core dynamics, and data assimilation \citep{Hersbach2019}. It provides more outputs, with higher temporal (hourly) and spatial (0.28\degree; 31~km) resolutions. The use of a 10-members ensemble of data assimilations at a lower spatial and temporal resolution allows an estimation of the uncertainty. ERA5 assimilates significantly more data than ERA-Interim, such as ground-based radar and new satellite sensors, and uses improved observation operators, which allows better comparing model outputs to observations. Additionally, it indirectly benefits from improvements of historical observations, both for conventional and satellite data \citep{Hersbach2019}. ERA5 provides, among others, more consistent sea surface temperature and sea ice, an improved representation of tropical cyclones, a better balance of evaporation and precipitation, and improved soil moisture. ERA5 is also more suitable for climate analyses as it relies on appropriate radiative forcing and boundary conditions (e.g., changes in greenhouse gases, aerosols, SST, and sea ice).
 
 
 \begin{table}[bt]
@@ -203,7 +203,7 @@ Finally, the most complex method, PT-2Z-4W-4MI, also named "SANDHY" for Stepwise
 \subsection{Calibration of the methods} %\subsubsection?
 \label{sec:calibration}
 
-The CRPS \citep[Continuous Ranked Probability Score,][]{Brown1974, Matheson1976, Hersbach2000} is often used as the performance metric for AMs as it allows evaluating the predicted cumulative distribution provided by the analogs with regards to the single observed value at the target date. Its skill score expression, the CRPSS (Continuous Ranked Probability Skill Score), was used here, using the climatological distribution of precipitation at each station as the reference. It allows a better comparison between stations as it takes into account the differences in climatology to some extent. The CRPSS is expressed as follows \citep{Bradley2011}:
+The Continuous Ranked Probability Score \citep[CRPS,][]{Brown1974, Matheson1976, Hersbach2000} is often used as the performance metric for AMs as it allows evaluating the predicted cumulative distribution provided by the analogs with regards to the single observed value at the target date. Its skill score expression, the Continuous Ranked Probability Skill Score (CRPSS), was used here, using the climatological distribution of precipitation at each station as the reference. It allows a better comparison between stations as it takes into account the differences in climatology to some extent. The CRPSS is expressed as follows \citep{Bradley2011}:
 
 \begin{equation}
 	\label{eq:CRPSS}
@@ -245,6 +245,22 @@ The first results of the calibration showed that ERA5 (grayed bars in Fig. \ref{
 The use of predictors from different datasets, and with distinct spatial windows, results in a different selection of analog dates. The percentage of identical analog dates for the different AMs over the VP is shown in Fig. \ref{fig:shared-dates}. This percentage decreases with the complexity of the AM, and range from a maximum of 74\% between NR-1 and NR-2 for the 2Z method to a minimum of 10\% between MERRA-2 and 20CR-2c for the PT-2Z-4W-4MI method. It is likely that if all reanalyses were compared over the same spatial windows, these numbers would be higher.
 
 As it could be expected, ERA5 shared some similarities in the selection of analog dates with ERA-INT, but not to an extent that is significantly different from the other modern full-input reanalyses. Indeed, the percentage of shared analog dates is of the same order of magnitude as with CFSR and JRA-55, which are the two reanalyses produced by models with a high spatial resolution (Table \ref{table:datasets}), but with fewer vertical levels. It is worth noting that JRA-55, which presents here strong similarities with ERA5 in terms of selected analog dates for Switzerland, has an output resolution that is five times lower (1.25\degree). It should be noted, however, that JRA-55 shares more analog dates with ERA-INT than with ERA5. 
+
+
+\subsection{Parameter space}
+\label{sec:results_parameters}
+
+Every AM has been calibrated independently for each reanalysis to provide a performance that is optimal for each configuration. In consequence, the optimal parameters differ from a setup to another. The parameter that were calibrated here are the number of analog (Fig. \ref{fig:params-nb-analogs}) and the spatial windows on which the predictor fields are compared (Fig. \ref{fig:params-xwidth} for the zonal extent and Fig. \ref{fig:params-ywidth} for the meridional extent). Substantial differences can be observed between the datasets.
+
+The number of analogs varies non-homogeneously between methods and datasets (Fig. \ref{fig:params-nb-analogs}). For methods with a single level of analogy (2Z and 4Z), the three reanalyses with the lowest spatial resolution and the poorest prediction skill (Sect. \ref{sec:results_skill}) are characterized by a higher number of analogs, while the other datasets show similar distribution. A higher number of analogs can be related to the size of the spatial window and thus the spatial resolution, but it was also shown to be linked with the skill of the prevision and thus the quality of the dataset \citep{Horton2017b}. However, this cannot be transposed to all levels of analogy of more complex methods as interactions between these levels result in a more complex behaviour. For example, while there is no clear trend for the number of analogs for the atmospheric circulation for 2Z-2MI and 4Z-2MI, PT-2Z-4MI show an inverse trend of more skilled datasets being related to a higher number of analogs on the first level of analogy (Z). This method emphasizes more moisture predictors with four predictors being used in the second level of analogy. A likely reason for such an inverted tendency comes from better moisture variables. 
+
+It is important to remember here that the number of analogs of each level of analogy is optimized jointly at the end of the calibration procedure by assessing multiple combinations. Thus, datasets with better moisture variables in the second level of analogy benefit from discriminating the analog candidates using these instead of circulation variables, and thus keep a higher number of analogs from the first level of analogy. The same pattern can be observed for PT-2Z-4W-4MI, the most complex method, for Z and even more so for W. These selections of larger samples of analog dates based on circulation variables correspond to datasets with higher spatial resolution and better skill, but only when the method has multiple levels of analogy. This suggest that parameters might not be optimal when transferred from one reanalysis to another, and that one should be careful when manually adapting parameters as the direction of change can be counter-intuitive. Moreover, some distributions are highly spread out, which makes the generalization of parameter values more difficult. The distributions for the last level of analogy are unimodal and less spread out than for precedent levels of analogy.
+
+The zonal extent of the spatial windows (Fig. \ref{fig:params-xwidth} also show substantial differences between datasets depending on the AM. For circulation-only AM (2Z and 4Z), the zonal extent tends to decrease with a higher spatial resolution of the reanalysis, even more so when four geopotential fields are considered (4Z). Also, all spatial windows tend to be substantially smaller for 4Z than for 2Z, with mean values that can be halved for certain datasets. Unlike for the number of analogs, the spatial windows were here calibrated sequentially for each level of analogy, without posterior re-calibrations. This results in distributions of the zonal extent of geopotential height fields that are relatively similar between the first level of analogy of more complex methods and AM based on Z only. The differences that can be observed are due to different initial number of analogs at the start of the calibration procedure for 2Z-2MI and 4Z-2MI, as well as a different preselection of the candidate analogs for PT-2Z-4MI and PT-2Z-4W-4MI. This is however not the case anymore when using a global optimization technique that optimizes jointly all parameters of the different levels of analogy, with spatial windows of the circulation variables being reduced when moisture variables are used on a second level of analogy \citep{Horton2018a}. Similar zonal extents between the methods does not here correspond to an optimal, but to a limitation of the sequential calibration procedure that can only be overcome by a global optimization technique.
+
+Moisture variables and vertical velocity are local variables that are characterized by smaller spatial windows \citep{BenDaoud2016, Horton2018a}. Their zonal extent decreases with the spatial resolution of the reanalysis, to the exception of MERRA-2 when four moisture variables are used (the reason has not been investigated). Also, the zonal extents of W is noticeably smaller than those of moisture variables for reanalyses with high resolution, i.e. CFSR and ERA5. Finally, while the distributions of the zonal extents are mostly unimodal for W and MI, higher resolution datasets show multimodal distributions for Z. Similarly to the number of analogs, the differences of the optimal spatial windows for the different reanalyses raise caution about the transferability of parameters between datasets. As shown by \citet{Horton2019}, it would be safer to transfer larger spatial windows from one dataset to another rather than the opposite. 
+
+The meridional extent of the spatial windows (Fig. \ref{fig:params-ywidth}) show similarity with the zonal extent in that MI and W are characterized by smaller extents that Z, with W being assessed on very small windows for CFSR and ERA5, and MERRA-2 diverging from the trend when four moisture variables are used. In contrast to the zonal extents, the meridional extents for Z do show a relationship with the spatial resolution and show distributions that differ between datasets with a tendency of being more multimodal than for zonal extents. Indeed, the frequency of spatial windows with a minimal meridional extent is rather high, all the more for ERA5. 
 
 
 \section{Conclusions}
@@ -304,37 +320,58 @@ The author has declared no conflict of interest.
 \pagebreak
 
 \begin{figure}
-	\includegraphics[width=80mm]{figure-1.jpg}\\
+%	\includegraphics[width=80mm]{figure-1.jpg}\\
 	\caption{Map of the 301 precipitation stations with good data coverage of the period 1981--2010. Background map: \textcopyright\ SwissTopo. Modified from \citet{Horton2018b}.}
 	\label{fig:stations}
 \end{figure}
 
 \begin{figure}[bt]
 	\centering
-	\includegraphics[width=\textwidth]{figure-2.pdf}
+%	\includegraphics[width=\textwidth]{figure-2.pdf}
 	\caption{CRPSS for all stations and all considered AMs and reanalysis datasets on the VP. A higher CRPSS means better performance. The parameters of the AMs were calibrated for every station, every dataset, and every method. The boxes show the 25th, 50th, and 75th percentiles. The whiskers extend to the most extreme data point, which is no more than 1.5 times the interquartile range.}
 	\label{fig:comparison_values}
 \end{figure}
 
 \begin{figure}[bt]
 	\centering
-	\includegraphics[width=\textwidth]{figure-3.pdf}
+%	\includegraphics[width=\textwidth]{figure-3.pdf}
 	\caption{Impact of the reanalysis dataset on performance, isolated by processing the improvement in CRPSS for one dataset compared to the mean performance on all datasets, per station and method. Note that the methods cannot be compared here, only the datasets. Same conventions as Fig. 2.}
 	\label{fig:comparison_relative}
 \end{figure}
 
 \begin{figure}[bt]
 	\centering
-	\includegraphics[width=100mm]{figure-4.pdf}
+%	\includegraphics[width=100mm]{figure-4.pdf}
 	\caption{Comparison of ERA-INT and ERA5 at 0.25\degree\ and 0.75\degree\ as well as a failed calibration of AMs with ERA5 (gray; see explanation in text). The impact of the reanalysis on performance has been isolated by processing the improvement in CRPSS for one dataset compared to the mean performance on all datasets (excluding the failed calibration), per station and per method. Same conventions as Fig. 2.}
 	\label{fig:resolution}
 \end{figure}
 
 \begin{figure}[bt]
 	\centering
-	\includegraphics[width=120mm]{figure-5.pdf}
+%	\includegraphics[width=120mm]{figure-5.pdf}
 	\caption{Percentage of identical analog dates, for different AMs, selected when using the reanalyses in columns that were also found when using the reanalyses in rows. The values were averaged for all stations on the VP.}
 	\label{fig:shared-dates}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+%	\includegraphics[width=115mm]{figure-6.pdf}
+	\caption{Calibrated number of analogs for the different methods and reanalyses and for all stations. The reanalyses are ordered by increasing spatial resolution. The triangles represent the mean values of all stations.}
+	\label{fig:params-nb-analogs}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+%	\includegraphics[width=115mm]{figure-7.pdf}
+	\caption{Calibrated zonal extents (in degrees) of the spatial windows for the different methods and reanalyses and for all stations. Same conventions as Fig. \ref{fig:params-nb-analogs}.}
+	\label{fig:params-xwidth}
+\end{figure}
+
+\begin{figure}[btp]
+	\centering
+%	\includegraphics[width=115mm]{figure-8.pdf}
+	\caption{Calibrated meridional extents (in degrees) of the spatial windows for the different methods and reanalyses and for all stations. Same conventions as Fig. \ref{fig:params-nb-analogs}.}
+	\label{fig:params-ywidth}
 \end{figure}
 
 
